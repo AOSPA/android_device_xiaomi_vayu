@@ -275,7 +275,8 @@ PRODUCT_PACKAGES += \
     VayuCarrierConfigOverlay \
     VayuFrameworks \
     VayuSettings \
-    VayuSystemUI
+    VayuSystemUI \
+    VayuWifiOverlay
 
 PRODUCT_ENFORCE_RRO_TARGETS += *
 
