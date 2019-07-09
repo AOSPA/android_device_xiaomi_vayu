@@ -89,6 +89,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 BOARD_USES_METADATA_PARTITION := true
 
 # Recovery
+BOARD_INCLUDE_RECOVERY_DTBO := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.qcom
 
 # Inherit from proprietary files
