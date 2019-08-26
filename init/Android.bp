@@ -15,6 +15,17 @@
 // limitations under the License.
 //
 
+cc_library_static {
+    name: "libinit_vayu",
+    srcs: ["init_vayu.cpp"],
+    whole_static_libs: ["libbase"],
+    recovery_available: true,
+    include_dirs: [
+        "system/core/init"
+    ],
+    shared_libs: ["libbase"],
+}
+
 prebuilt_etc {
     name: "fstab.qcom",
     src: "fstab.qcom",
