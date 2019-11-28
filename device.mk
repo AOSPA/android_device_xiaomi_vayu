@@ -107,11 +107,21 @@ TARGET_COMMON_QTI_COMPONENTS := \
     init \
     media-legacy \
     overlay \
-    telephony
+    telephony \
+    wlan
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
+
+# WiFi
+PRODUCT_PACKAGES += \
+    libwpa_client
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
 
 # Call the proprietary setup
 $(call inherit-product, vendor/xiaomi/vayu/vayu-vendor.mk)
