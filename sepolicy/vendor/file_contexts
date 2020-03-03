@@ -1,2 +1,5 @@
+# Audio
+/dev/socket/audio_hw_socket                                          u:object_r:audio_socket:s0
+
 # HALs
 /vendor/bin/hw/android\.hardware\.light-service\.xiaomi              u:object_r:hal_light_default_exec:s0
