@@ -172,6 +172,20 @@ service vendor.hvdcp_opti /vendor/bin/hvdcp_opti
     group system wakelock
     writepid /dev/cpuset/system-background/tasks
 
+service nqnfc_2_0_hal_service /vendor/bin/hw/vendor.nxp.hardware.nfc@2.0-service
+    override
+    class hal
+    user nfc
+    group nfc
+    writepid /dev/cpuset/system-background/tasks
+    disabled
+
+on property:ro.boot.hwname=*
+    setprop ro.boot.product.hardware.sku ${ro.boot.hwname}
+
+on property:ro.boot.product.hardware.sku=vayu
+    enable nqnfc_2_0_hal_service
+
 service vendor.remosaic_daemon /system/vendor/bin/remosaic_daemon
     class late_start
     user camera
