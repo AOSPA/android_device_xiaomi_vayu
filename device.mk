@@ -175,7 +175,8 @@ PRODUCT_COPY_FILES += \
 # Overlays
 PRODUCT_PACKAGES += \
     VayuFrameworks \
-    VayuSettings
+    VayuSettings \
+    VayuSystemUI
 
 PRODUCT_ENFORCE_RRO_TARGETS += *
 
