@@ -70,6 +70,10 @@
             <meta-data
                 android:name="com.android.settings.order"
                 android:value="1" />
+                android:value="-253" />
+            <meta-data
+                android:name="com.android.settings.icon"
+                android:resource="@drawable/ic_thermal_settings" />
         </activity>
 
         <service
