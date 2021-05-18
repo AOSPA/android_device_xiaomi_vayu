@@ -148,6 +148,9 @@ PRODUCT_PACKAGES += \
     android.hardware.light-service.xiaomi
 
 # NFC
+PRODUCT_PACKAGES += \
+    SecureElement \
+
 TARGET_NFC_SKU := vayu
 
 PRODUCT_COPY_FILES += \
