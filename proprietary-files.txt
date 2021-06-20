@@ -70,6 +70,9 @@ vendor/lib/soundfx/libqcreverb.so|d2f89689ca7290a1a31e398164d8a42053b86259
 vendor/lib/soundfx/libqcvirt.so|f67792cc079bc0348e960343e803a5158e4a24b1
 vendor/lib/soundfx/libshoebox.so|214d5fefd21c617bdfa05255fe667127b4242556
 
+# Audio Mi Sound FX
+vendor/lib/soundfx/libmisoundfx.so
+
 # Audio HAL
 vendor/lib/hw/audio.primary.msmnile.so
 vendor/lib/vndk/libxlog.so
