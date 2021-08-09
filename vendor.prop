@@ -119,6 +119,8 @@ debug.sf.earlyGl.app.duration=21000000
 debug.sf.enable_egl_image_tracker=1
 debug.sf.enable_hwc_vds=1
 debug.sf.latch_unsignaled=1
+vendor.display.idle_time=0
+vendor.display.idle_time_inactive=0
 
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
