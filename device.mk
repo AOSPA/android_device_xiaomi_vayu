@@ -28,6 +28,10 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 # Platform
 TARGET_BOARD_PLATFORM := msmnile
 
+# QTI components
+TARGET_COMMON_QTI_COMPONENTS := \
+    overlay
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
