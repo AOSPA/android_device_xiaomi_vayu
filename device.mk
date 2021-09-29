@@ -24,12 +24,13 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml
 
-# Fstab
+# Init
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+    init.target.rc
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
-
-PRODUCT_PACKAGES += \
-    fstab.qcom
 
 # Overlays
 PRODUCT_PACKAGES += \
@@ -45,6 +46,7 @@ TARGET_BOARD_PLATFORM := msmnile
 # QTI components
 TARGET_COMMON_QTI_COMPONENTS := \
     bt \
+    init \
     overlay \
     telephony
 
