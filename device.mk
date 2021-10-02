@@ -101,6 +101,7 @@ TARGET_COMMON_QTI_COMPONENTS := \
     bt \
     display \
     init \
+    media-legacy \
     overlay \
     telephony
 
