@@ -108,6 +108,7 @@ TARGET_COMMON_QTI_COMPONENTS := \
     media-legacy \
     overlay \
     telephony \
+    usb \
     wlan
 
 # Sensors
