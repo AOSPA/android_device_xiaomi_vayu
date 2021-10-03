@@ -46,6 +46,10 @@ TARGET_USES_QTI_CAMERA_DEVICE := true
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
 
+# HIDL
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/hidl/manifest.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/hidl/compatibility_matrix.xml
+
 # Kernel
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
