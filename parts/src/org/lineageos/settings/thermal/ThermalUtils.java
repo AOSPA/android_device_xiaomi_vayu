@@ -19,14 +19,17 @@ package org.lineageos.settings.thermal;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.FileUtils;
 import android.os.UserHandle;
+import android.util.Log;
 
 import androidx.preference.PreferenceManager;
 
-import org.lineageos.settings.utils.FileUtils;
+import java.io.IOException;
 
 public final class ThermalUtils {
 
+    private static final String TAG = "ThermalUtils";
     private static final String THERMAL_CONTROL = "thermal_control";
 
     protected static final int STATE_DEFAULT = 0;
@@ -135,7 +138,11 @@ public final class ThermalUtils {
     }
 
     protected void setDefaultThermalProfile() {
-        FileUtils.writeLine(THERMAL_SCONFIG, THERMAL_STATE_DEFAULT);
+        try {
+            FileUtils.stringToFile(THERMAL_SCONFIG, THERMAL_STATE_DEFAULT);
+        } catch (IOException e) {
+            Log.e(TAG, "Failed to write to " + THERMAL_SCONFIG, e);
+        }
     }
 
     protected void setThermalProfile(String packageName) {
@@ -160,6 +167,11 @@ public final class ThermalUtils {
                 state = THERMAL_STATE_STREAMING;
             }
         }
-        FileUtils.writeLine(THERMAL_SCONFIG, state);
+
+        try {
+            FileUtils.stringToFile(THERMAL_SCONFIG, state);
+        } catch (IOException e) {
+            Log.e(TAG, "Failed to write to " + THERMAL_SCONFIG, e);
+        }
     }
 }
