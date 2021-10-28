@@ -147,6 +147,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.light-service.xiaomi
 
+# NFC
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
+    $(LOCAL_PATH)/configs/nfc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
+
 # Overlays
 PRODUCT_PACKAGES += \
     VayuFrameworks
@@ -169,6 +174,7 @@ TARGET_COMMON_QTI_COMPONENTS := \
     gps \
     init \
     media-legacy \
+    nq-nfc \
     overlay \
     perf \
     telephony \
