@@ -111,6 +111,10 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.use_data_netmgrd=true \
     persist.vendor.data.mode=concurrent
 
+# Device-specific settings
+PRODUCT_PACKAGES += \
+    XiaomiParts
+
 # DPM Properties
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.dpm.nsrm.bkg.evt=3955 \
