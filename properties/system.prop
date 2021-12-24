@@ -22,12 +22,6 @@ vendor.camera.aux.packagelist=org.codeaurora.snapcam,org.lineageos.snap,com.andr
 # Charger
 ro.charger.disable_init_blank=true
 
-# CNE
-persist.vendor.cne.feature=1
-
-# DPM
-persist.vendor.dpm.feature=1
-
 # Fwk detect
 ro.vendor.qti.va_aosp.support=1
 
@@ -61,7 +55,6 @@ ro.nfc.port=I2C
 
 # Netmgr
 persist.vendor.data.iwlan.enable=true
-persist.vendor.data.mode=concurrent
 
 # NTP Server backup
 persist.backup.ntpServer="0.pool.ntp.org"
@@ -77,9 +70,7 @@ ro.vendor.qti.core_ctl_min_cpu=2
 persist.radio.dynamic_sar=false
 persist.radio.NO_STAPA=1
 persist.radio.VT_HYBRID_ENABLE=1
-persist.vendor.radio.custom_ecc=1
 rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
-ro.telephony.default_network=33,22
 
 # Seamless transfer
 sys.fflag.override.settings_seamless_transfer=true

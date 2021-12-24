@@ -269,28 +269,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/usr/keylayout/,$(TARGET_COPY_OUT_VENDOR)/usr/keylayout)
 
-# IMS & Telephony
-PRODUCT_PACKAGES += \
-    ims-ext-common \
-    ims_ext_common.xml \
-    qti-telephony-hidl-wrapper \
-    qti_telephony_hidl_wrapper.xml \
-    qti-telephony-utils \
-    qti_telephony_utils.xml \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.cdma.xml \
-    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml \
-    frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml
-
 # IPACM
 PRODUCT_PACKAGES += \
-    ipacm \
-    IPACM_cfg.xml \
     libipanat \
     liboffloadhal
 
@@ -385,6 +365,7 @@ TARGET_BOARD_PLATFORM := msmnile
 TARGET_COMMON_QTI_COMPONENTS := \
     bt \
     perf \
+    telephony \
     usb
 
 # RIL
@@ -393,10 +374,8 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.3.vendor \
     android.hardware.radio.deprecated@1.0.vendor \
     android.hardware.secure_element@1.2.vendor \
-    libjson \
     libjson.vendor \
-    libprotobuf-cpp-full \
-    librmnetctl
+    libprotobuf-cpp-full
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.se.omapi.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.ese.xml \
