@@ -61,6 +61,10 @@ persist.backup.ntpServer="0.pool.ntp.org"
 # Netflix custom property
 ro.netflix.bsp_rev=Q855-16947-1
 
+# ParanoidDoze
+ro.sensor.pickup=xiaomi.sensor.pickup
+ro.sensor.proximity=true
+
 # Perf
 ro.vendor.qti.core_ctl_max_cpu=4
 ro.vendor.qti.core_ctl_min_cpu=2
