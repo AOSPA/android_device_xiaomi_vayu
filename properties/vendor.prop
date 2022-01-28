@@ -136,7 +136,6 @@ ro.vendor.audio.soundtrigger.xatx.vop.level.low=10
 ro.vendor.audio.soundtrigger.xatx.vop.level.medium=10
 
 # Media
-debug.stagefright.ccodec=1
 debug.stagefright.omx_default_rank=0
 
 # PASR
