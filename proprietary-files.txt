@@ -484,6 +484,21 @@ vendor/lib64/vendor.qti.ims.rcsconfig@2.0.so
 vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@3.0.so
 
+# IPA
+vendor/etc/init/ipa_fws.rc
+vendor/firmware/ipa_fws.b00
+vendor/firmware/ipa_fws.b01
+vendor/firmware/ipa_fws.b02
+vendor/firmware/ipa_fws.b03
+vendor/firmware/ipa_fws.b04
+vendor/firmware/ipa_fws.elf
+vendor/firmware/ipa_fws.mdt
+vendor/firmware/ipa_uc.b00
+vendor/firmware/ipa_uc.b01
+vendor/firmware/ipa_uc.b02
+vendor/firmware/ipa_uc.elf
+vendor/firmware/ipa_uc.mdt
+
 # Listen
 vendor/lib/hw/sound_trigger.primary.msmnile.so
 vendor/lib/libadpcmdec.so
