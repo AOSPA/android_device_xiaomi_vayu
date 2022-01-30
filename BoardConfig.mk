@@ -46,6 +46,9 @@ TARGET_USES_QTI_CAMERA_DEVICE := true
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
 
+# GPS
+LOC_HIDL_VERSION := 4.0
+
 # HIDL
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/hidl/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/hidl/compatibility_matrix.xml
