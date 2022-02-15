@@ -198,11 +198,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/usr/keylayout/,$(TARGET_COPY_OUT_VENDOR)/usr/keylayout)
 
-# IPACM
-PRODUCT_PACKAGES += \
-    libipanat \
-    liboffloadhal
-
 # IPsec
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.ipsec_tunnels.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnels.xml
@@ -222,17 +217,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.lights-service.vayu
 
-# Media
-PRODUCT_PACKAGES += \
-    libavservices_minijail_vendor \
-    libOmxAacEnc \
-    libOmxAmrEnc \
-    libOmxEvrcEnc \
-    libOmxG711Enc \
-    libOmxQcelp13Enc \
-    libOmxVdec \
-    libOmxVenc
-
 # Network
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.1.vendor
@@ -249,11 +233,6 @@ PRODUCT_PACKAGES += \
 # ParanoidDoze
 PRODUCT_PACKAGES += \
     ParanoidDoze
-
-# Power
-PRODUCT_PACKAGES += \
-    android.hardware.power-service-qti \
-    android.hardware.power.stats@1.0-service.mock
 
 # Public libraries
 PRODUCT_COPY_FILES += \
@@ -359,9 +338,6 @@ PRODUCT_PACKAGES += \
     com.android.vndk.current.on_vendor
 
 # WiFi
-PRODUCT_PACKAGES += \
-    libwpa_client
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \

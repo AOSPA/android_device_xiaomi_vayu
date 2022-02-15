@@ -38,17 +38,10 @@ TARGET_OTA_ASSERT_DEVICE := vayu,bhima
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msmnile
-TARGET_NO_BOOTLOADER := true
 
 # Display
 TARGET_SCREEN_DENSITY := 440
 TARGET_USES_VULKAN := true
-
-# Camera
-TARGET_USES_QTI_CAMERA_DEVICE := true
-
-# Filesystem
-TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
 
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
@@ -77,12 +70,10 @@ BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 TARGET_KERNEL_ARCH := arm64
 BOARD_KERNEL_IMAGE_NAME := Image
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-  TARGET_KERNEL_CONFIG := vayu_defconfig
-  TARGET_KERNEL_CLANG_COMPILE := true
-  TARGET_KERNEL_SOURCE := kernel/xiaomi/vayu
-  TARGET_KERNEL_ADDITIONAL_FLAGS += HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
-endif
+TARGET_KERNEL_CONFIG := vayu_defconfig
+TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_SOURCE := kernel/xiaomi/vayu
+TARGET_KERNEL_ADDITIONAL_FLAGS += HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 
 # Partitions
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
@@ -114,11 +105,9 @@ BOARD_USES_METADATA_PARTITION := true
 
 # Power
 TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
-TARGET_USES_INTERACTION_BOOST := true
 
 # Platform
 TARGET_BOARD_PLATFORM := msmnile
-BOARD_USES_QCOM_HARDWARE := true
 
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/properties/odm.prop
@@ -143,8 +132,6 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USES_MKE2FS := true
 
-# RIL
-ENABLE_VENDOR_RIL_SERVICE := true
 
 # Sepolicy
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
