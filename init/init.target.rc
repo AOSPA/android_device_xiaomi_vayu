@@ -96,6 +96,10 @@ on boot
     chown system system /sys/bus/platform/devices/soc/soc:fpc1020/modalias
     chmod 0220 /sys/bus/platform/devices/soc/soc:fpc1020/fingerdown_wait
 
+    # Set SPI infrared radiator permission
+    chown system system /dev/ir_spi
+    chmod 0660 /dev/ir_spi
+
 on property:sys.boot_completed=1
     # Runtime fs tuning
     write /sys/block/sda/queue/read_ahead_kb 128
