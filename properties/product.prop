@@ -4,6 +4,7 @@ audio.sys.mute.latency.factor=2
 audio.sys.routing.latency=0
 audio.sys.offload.pstimeout.secs=3
 vendor.audio.adm.buffering.ms=6
+ro.vendor.audio.sdk.fluencetype=fluence
 
 # Charger
 ro.charger.enable_suspend=true
