@@ -232,7 +232,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.lights-service.vayu
+    android.hardware.light-service.xiaomi
 
 # Net
 PRODUCT_PACKAGES += \
