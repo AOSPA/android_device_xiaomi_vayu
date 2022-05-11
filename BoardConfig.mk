@@ -99,12 +99,6 @@ TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
 # Platform
 TARGET_BOARD_PLATFORM := msmnile
 
-# Properties
-TARGET_PRODUCT_PROP += $(DEVICE_PATH)/properties/product.prop
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/properties/system.prop
-TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/properties/system_ext.prop
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/properties/vendor.prop
-
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_vayu
 TARGET_RECOVERY_DEVICE_MODULES := libinit_vayu

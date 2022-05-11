@@ -31,24 +31,26 @@ PRODUCT_TARGET_VNDK_VERSION := 30
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Audio
-PRODUCT_PACKAGES += \
-    android.hardware.audio.service \
-    android.hardware.soundtrigger@2.2-impl \
-    libaudiopreprocessing \
-    libbundlewrapper \
-    libdownmix \
-    libdynproc \
-    libeffectproxy \
-    libldnhncr \
-    libreverbwrapper \
-    libvisualizer
-
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc) \
     $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/audio_policy_configuration.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration.xml
+
+PRODUCT_PRODUCT_PROPERTIES += \
+    aaudio.mmap_policy=1 \
+    persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24 \
+    ro.vendor.audio.sdk.fluencetype=fluence \
+    vendor.audio.adm.buffering.ms=6 \
+    vendor.audio.hal.output.suspend.supported=false \
+    vendor.audio.offload.track.enable=false
+
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.config.media_vol_default=8 \
+    ro.config.media_vol_steps=25 \
+    ro.config.vc_call_vol_default=9 \
+    ro.config.vc_call_vol_steps=11
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -66,16 +68,32 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
 
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    persist.vendor.btstack.enable.lpa=true \
+    persist.vendor.btstack.enable.twsplus=true \
+    persist.vendor.bt.a2dp.aac_whitelist=false
+
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.btsatck.absvolfeature=true \
+    persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptiver2 \
+    persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true \
+    persist.vendor.qcom.bluetooth.aac_vbr_ctl.enabled=true \
+    persist.vendor.qcom.bluetooth.enable.splita2dp=true \
+    persist.vendor.qcom.bluetooth.scram.enabled=true \
+    persist.vendor.qcom.bluetooth.soc=cherokee \
+    persist.vendor.qcom.bluetooth.twsp_state.enabled=false \
+    ro.vendor.bluetooth.wipower=false \
+    vendor.qcom.bluetooth.soc=cherokee
+
 # Camera
 PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64 \
-    GCamGOPrebuilt \
-    libcamera2ndk_vendor \
     libdng_sdk.vendor \
-    libxml2 \
+    vendor.qti.hardware.camera.device@1.0.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor
+
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -83,16 +101,17 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml
 
-PRODUCT_PACKAGES += \
-   libstdc++.vendor
+PRODUCT_SYSTEM_PROPERTIES += \
+    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera \
+    persist.vendor.camera.facepp.fdenable=0 \
+    camera.disable_zsl_mode=1
 
 # Charger
 PRODUCT_PACKAGES += \
     libsuspend
 
-# Config Store
-PRODUCT_PACKAGES += \
-    disable_configstore
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.charger.enable_suspend=true
 
 # Consumer IR
 PRODUCT_PACKAGES += \
@@ -102,15 +121,45 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
 
-# Dex
-ifneq ($(TARGET_BUILD_VARIANT),eng)
-PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := verify
-endif
+# Display / Graphics
+PRODUCT_PACKAGES += \
+    disable_configstore
+
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.sys.sf.color_mode=0
+
+PRODUCT_VENDOR_PROPERTIES += \
+    debug.sf.disable_backpressure=1 \
+    debug.sf.enable_hwc_vds=1 \
+    persist.sys.sf.native_mode=0 \
+    ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.msmnile.api30 \
+    ro.surface_flinger.use_content_detection_for_refresh_rate=true \
+    ro.surface_flinger.set_display_power_timer_ms=1000 \
+    ro.surface_flinger.set_idle_timer_ms=500 \
+    ro.surface_flinger.set_touch_timer_ms=750 \
+    ro.vendor.display.sensortype=2 \
+    vendor.display.disable_idle_time_hdr=1 \
+    vendor.display.disable_idle_time_video=1 \
+    vendor.display.idle_time=0 \
+    vendor.display.idle_time_inactive=0
+
+# DPM
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.dpm.feature=1 \
+    persist.vendor.dpm.nsrm.bkg.evt=3955 \
+    persist.vendor.dpmhalservice.enable=1
 
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4-service.clearkey \
     android.hardware.drm@1.3.vendor
+
+PRODUCT_VENDOR_PROPERTIES += \
+    drm.service.enabled=true
+
+# Factory Reset Protection
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
 # Fastbootd
 PRODUCT_PACKAGES += \
@@ -131,10 +180,6 @@ PRODUCT_PACKAGES += \
     libqti_vndfwk_detect.vendor \
     libvndfwk_detect_jni.qti \
     libvndfwk_detect_jni.qti.vendor
-
-# Gatekeeper
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0.vendor
 
 # Health
 PRODUCT_PACKAGES += \
@@ -173,100 +218,34 @@ PRODUCT_COPY_FILES += \
 
 # Keymaster
 PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0.vendor \
     android.hardware.keymaster@4.1.vendor
 
 PRODUCT_COPY_FILES += \
    frameworks/native/data/etc/android.software.device_id_attestation.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.device_id_attestation.xml
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.crypto.volume.filenames_mode="aes-256-cts" \
+    ro.crypto.dm_default_key.options_format.version=2 \
+    ro.crypto.volume.metadata.method=dm-default-key \
+    vendor.gatekeeper.disable_spu=true
+
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.lights-service.vayu
 
-# Network
+# Net
 PRODUCT_PACKAGES += \
-    android.system.net.netd@1.1.vendor
+    android.system.net.netd@1.1.vendor \
+    netutils-wrapper-1.0
 
-# Overlays
-PRODUCT_PACKAGES += \
-   FrameworksResOverlayVayu \
-   NotchBarKillerVayu \
-   SettingsOverlayVayu \
-   SettingsProviderOverlayVayu \
-   SystemUIOverlayVayu \
-   WifiOverlayVayu
-
-# ParanoidDoze
-PRODUCT_PACKAGES += \
-    ParanoidDoze
-
-# Public libraries
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
-
-# Properties
-include $(LOCAL_PATH)/properties/default.mk
-
-# QTI
-TARGET_BOARD_PLATFORM := msmnile
-
-TARGET_COMMON_QTI_COMPONENTS := \
-    adreno \
-    audio \
-    av \
-    bt \
-    gps \
-    display \
-    init \
-    media-legacy \
-    overlay \
-    perf \
-    telephony \
-    usb \
-    vibrator \
-    wfd \
-    wlan
-
-# RIL
-PRODUCT_PACKAGES += \
-    android.hardware.radio@1.6.vendor \
-    android.hardware.radio.config@1.3.vendor \
-    android.hardware.radio.deprecated@1.0.vendor \
-    android.hardware.secure_element@1.2.vendor \
-    libjson.vendor \
-    libprotobuf-cpp-full
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.se.omapi.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.ese.xml \
-    frameworks/native/data/etc/android.hardware.se.omapi.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.uicc.xml
-
-# Sensors
-PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl \
-    android.hardware.sensors@1.0-service \
-    libsensorndkbridge
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.accelerometer.xml \
-    frameworks/native/data/etc/android.hardware.sensor.barometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.barometer.xml \
-    frameworks/native/data/etc/android.hardware.sensor.compass.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.compass.xml \
-    frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.gyroscope.xml \
-    frameworks/native/data/etc/android.hardware.sensor.light.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.light.xml \
-    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.proximity.xml \
-    frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepcounter.xml \
-    frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepdetector.xml
-
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH) \
-    hardware/xiaomi
+# Netflix
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.netflix.bsp_rev=Q855-16947-1
 
 # NeuralNetworks
 PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3.vendor
-
-# Net
-PRODUCT_PACKAGES += \
-    netutils-wrapper-1.0
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -291,6 +270,91 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_vayu/com.android.nfc_extras.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_vayu/com.nxp.mifare.xml
 
+# Overlays
+PRODUCT_PACKAGES += \
+   FrameworksResOverlayVayu \
+   NotchBarKillerVayu \
+   SettingsOverlayVayu \
+   SettingsProviderOverlayVayu \
+   SystemUIOverlayVayu \
+   WifiOverlayVayu
+
+# ParanoidDoze
+PRODUCT_PACKAGES += \
+    ParanoidDoze
+
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    ro.sensor.pickup=xiaomi.sensor.pickup \
+    ro.sensor.proximity=true
+
+# Public libraries
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+
+# QTI
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.soc.manufacturer=QTI \
+    ro.soc.model=SM8150
+
+TARGET_BOARD_PLATFORM := msmnile
+
+TARGET_COMMON_QTI_COMPONENTS := \
+    adreno \
+    audio \
+    av \
+    bt \
+    gps \
+    display \
+    init \
+    media-legacy \
+    overlay \
+    perf \
+    telephony \
+    usb \
+    vibrator \
+    wfd \
+    wlan
+
+# RIL
+PRODUCT_PACKAGES += \
+    android.hardware.radio@1.6.vendor \
+    android.hardware.radio.config@1.3.vendor \
+    android.hardware.radio.deprecated@1.0.vendor \
+    android.hardware.secure_element@1.2.vendor
+
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.radio.atfwd.start=true \
+    persist.vendor.radio.data_con_rprt=1 \
+    persist.vendor.radio.data_ltd_sys_ind=1 \
+    persist.vendor.radio.force_ltd_sys_ind=1 \
+    persist.vendor.radio.force_on_dc=true \
+    persist.vendor.radio.manual_nw_rej_ct=1 \
+    persist.vendor.radio.redir_party_num=1 \
+    persist.vendor.radio.sar_sar_sensor=true
+
+# Sensors
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-service \
+    libsensorndkbridge
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.accelerometer.xml \
+    frameworks/native/data/etc/android.hardware.sensor.barometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.barometer.xml \
+    frameworks/native/data/etc/android.hardware.sensor.compass.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.compass.xml \
+    frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.gyroscope.xml \
+    frameworks/native/data/etc/android.hardware.sensor.light.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.light.xml \
+    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.proximity.xml \
+    frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepcounter.xml \
+    frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepdetector.xml
+
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.sensors.allow_non_default_discovery=true
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH) \
+    hardware/xiaomi
 
 # Verified boot
 PRODUCT_COPY_FILES += \
@@ -300,14 +364,20 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     vndservicemanager
 
-# VNDK
-PRODUCT_PACKAGES += \
-    com.android.vndk.current.on_vendor
-
 # WiFi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
+
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.data.iwlan.enable=true \
+    ro.telephony.iwlan_operation_mode=legacy
+
+# Zram
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.zram.mark_idle_delay_mins=60 \
+    ro.zram.first_wb_delay_mins=1440 \
+    ro.zram.periodic_wb_delay_hours=24 \
 
 include vendor/xiaomi/vayu/vayu-vendor.mk
