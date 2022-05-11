@@ -26,6 +26,9 @@ TARGET_2ND_CPU_VARIANT := cortex-a76
 # Assert
 TARGET_OTA_ASSERT_DEVICE := vayu,bhima
 
+# Board
+TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msmnile
 
