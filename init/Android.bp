@@ -13,6 +13,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
+
 cc_library_static {
     name: "libinit_vayu",
     srcs: ["init_vayu.cpp"],
@@ -22,4 +23,17 @@ cc_library_static {
         "system/libbase/include",
         "system/core/init"
     ]
+}
+
+prebuilt_etc {
+    name: "fstab.qcom",
+    src: "fstab.qcom",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.target.rc",
+    src: "init.target.rc",
+    sub_dir: "init/hw",
+    vendor: true,
 }

@@ -202,7 +202,7 @@ PRODUCT_PACKAGES += \
     init.target.rc
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.default
+    $(LOCAL_PATH)/init/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.default
 
 # Input
 PRODUCT_COPY_FILES += \
