@@ -35,30 +35,21 @@
             echo "mem_latency" > $memlat/governor
             echo 10 > $memlat/polling_interval
             echo 400 > $memlat/mem_latency/ratio_ceil
-	    done
+        done
 
-        #Enable userspace governor for L3 cdsp nodes
+        #Enable cdspl3 governor for L3 cdsp nodes
         for l3cdsp in $device/*cdsp-cdsp-l3-lat/devfreq/*cdsp-cdsp-l3-lat
         do
             echo "cdspl3" > $l3cdsp/governor
         done
 
+        #Gold L3 ratio ceil
+        echo 4000 > /sys/class/devfreq/soc:qcom,cpu6-cpu-l3-lat/mem_latency/ratio_ceil
+
         #Enable compute governor for gold latfloor
-        for latfloor in $device/*cpu-ddr-latfloor*/devfreq/*cpu-ddr-latfloor*
+        for latfloor in $device/*cpu*-ddr-latfloor*/devfreq/*cpu-ddr-latfloor*
         do
             echo "compute" > $latfloor/governor
             echo 10 > $latfloor/polling_interval
-        done
-
-        #Gold L3 ratio ceil
-        for l3gold in $device/*cpu4-cpu-l3-lat/devfreq/*cpu4-cpu-l3-lat
-        do
-            echo 4000 > $l3gold/mem_latency/ratio_ceil
-        done
-
-        #Prime L3 ratio ceil
-        for l3prime in $device/*cpu7-cpu-l3-lat/devfreq/*cpu7-cpu-l3-lat
-        do
-            echo 20000 > $l3prime/mem_latency/ratio_ceil
         done
     done;
