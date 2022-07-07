@@ -100,6 +100,9 @@ on boot
     chown system system /dev/ir_spi
     chmod 0660 /dev/ir_spi
 
+    # USB controller configuration
+    setprop sys.usb.configfs 1
+
 on property:sys.boot_completed=1
     # Runtime fs tuning
     write /sys/block/sda/queue/read_ahead_kb 128
@@ -149,6 +152,9 @@ on property:sys.shutdown.requested=*
     stop vendor.per_proxy
 
 on charger
+    setprop vendor.usb.controller a600000.dwc3
+    setprop sys.usb.configfs 1
+
     wait /dev/block/platform/soc/1da4000.ufshc/by-name/system
     mount ext4 /dev/block/platform/soc/1da4000.ufshc/by-name/system / ro barrier=1
 
