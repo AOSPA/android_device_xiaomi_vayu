@@ -122,7 +122,7 @@ BOARD_SEPOLICY_M4DEFS += \
     sysfs_battery_supply=vendor_sysfs_battery_supply
 
 # Vendor Security patch level
-VENDOR_SECURITY_PATCH := 2021-08-01
+VENDOR_SECURITY_PATCH := 2022-02-01
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
