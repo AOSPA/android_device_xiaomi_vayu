@@ -176,6 +176,7 @@ PRODUCT_PACKAGES += \
 # Init scripts
 PRODUCT_PACKAGES += \
     fstab.qcom \
+    init.qti.dcvs.sh \
     init.target.rc
 
 PRODUCT_COPY_FILES += \
