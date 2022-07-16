@@ -176,8 +176,11 @@ PRODUCT_PACKAGES += \
 # Init scripts
 PRODUCT_PACKAGES += \
     fstab.qcom \
+    init.mi.usb.sh \
     init.qti.dcvs.sh \
-    init.target.rc
+    init.target.rc \
+    init.vayu.rc \
+    ueventd.vayu.rc
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.default

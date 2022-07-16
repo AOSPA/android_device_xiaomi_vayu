@@ -38,6 +38,26 @@ prebuilt_etc {
     vendor: true,
 }
 
+prebuilt_etc {
+    name: "init.vayu.rc",
+    src: "init.vayu.rc",
+    sub_dir: "init",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "ueventd.vayu.rc",
+    filename: "ueventd.rc",
+    src: "ueventd.vayu.rc",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.mi.usb.sh",
+    src: "init.mi.usb.sh",
+    vendor: true,
+}
+
 sh_binary {
     name: "init.qti.dcvs.sh",
     src: "init.qti.dcvs.sh",
