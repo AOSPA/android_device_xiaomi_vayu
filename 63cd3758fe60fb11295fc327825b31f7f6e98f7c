@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "113b7aea_a5eae0e9",
+        "filename": "BoardConfig.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000463
+      },
+      "writtenOn": "2022-07-20T17:29:26Z",
+      "side": 0,
+      "message": "Userdata can also be removed.",
+      "revId": "63cd3758fe60fb11295fc327825b31f7f6e98f7c",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    }
+  ]
+}
