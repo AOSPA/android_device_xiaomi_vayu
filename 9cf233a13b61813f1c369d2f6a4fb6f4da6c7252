@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ff59a9e_883fa742",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000763
+      },
+      "writtenOn": "2022-07-20T18:02:24Z",
+      "side": 1,
+      "message": "\u003e Patch Set 2:\n\u003e \n\u003e \u003e Patch Set 1:\n\u003e  \u003e \n\u003e  \u003e (1 comment)\n\u003e Done\n\n",
+      "revId": "9cf233a13b61813f1c369d2f6a4fb6f4da6c7252",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    }
+  ]
+}

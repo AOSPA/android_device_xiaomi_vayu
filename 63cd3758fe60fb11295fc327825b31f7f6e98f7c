@@ -16,6 +16,24 @@
       "message": "Userdata can also be removed.",
       "revId": "63cd3758fe60fb11295fc327825b31f7f6e98f7c",
       "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "22425adc_26b224a3",
+        "filename": "BoardConfig.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000763
+      },
+      "writtenOn": "2022-07-20T18:02:24Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "113b7aea_a5eae0e9",
+      "revId": "63cd3758fe60fb11295fc327825b31f7f6e98f7c",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
     }
   ]
 }
