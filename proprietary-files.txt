@@ -710,16 +710,10 @@ vendor/lib64/unnhal-acc-hta.so
 vendor/lib64/unnhal-acc-hvx.so
 
 # NFC
-vendor/bin/hw/vendor.nxp.hardware.nfc@1.2-service
-vendor/etc/init/vendor.nxp.hardware.nfc@1.2-service.rc
 vendor/lib/libpn553_fw.so
 vendor/lib64/ese_spi_nxp.so
 vendor/lib64/hal_libnfc.so
 vendor/lib64/nfc_nci.nqpn553.default.hw.so
-vendor/lib64/vendor.nxp.hardware.nfc@1.0.so
-vendor/lib64/vendor.nxp.hardware.nfc@1.1.so
-vendor/lib64/vendor.nxp.nxpese@1.0.so
-vendor/lib64/vendor.nxp.nxpnfc@1.0.so
 
 # OMX
 vendor/lib/libAlacSwDec.so
