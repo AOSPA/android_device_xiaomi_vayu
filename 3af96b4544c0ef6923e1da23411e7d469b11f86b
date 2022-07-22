@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "86d2e7c4_e1962324",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000763
+      },
+      "writtenOn": "2022-07-22T04:43:32Z",
+      "side": 1,
+      "message": "I can\u0027t test myself cuz my variant lacks Nfc. Waiting for someone to test",
+      "revId": "3af96b4544c0ef6923e1da23411e7d469b11f86b",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    }
+  ]
+}
