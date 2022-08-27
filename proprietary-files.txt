@@ -138,6 +138,7 @@ vendor/lib64/camera/fdconfigpreview.bin
 vendor/lib64/camera/fdconfigpreviewlite.bin
 vendor/lib64/camera/fdconfigvideo.bin
 vendor/lib64/camera/fdconfigvideolite.bin
+vendor/lib64/hw/camera.qcom.so
 vendor/lib64/hw/com.qti.chi.override.so
 vendor/lib64/libFaceGrade.so
 vendor/lib64/libHalSuperSensorServer.so
@@ -196,10 +197,6 @@ vendor/lib64/libsymphony-cpu.so
 vendor/lib64/libvideoBokeh.so
 vendor/lib64/libvideofilter_only.so
 vendor/lib64/libvidhance.so
-
-# Camera - from miui_VAYUGlobal_V13.0.4.0.SJUMIXM_f96a3e38af_12.0.zip (patched)
-vendor/lib64/hw/camera.qcom.so|e5ed5afe6ad85cb260e520d066ea980d682a1ed7
-vendor/lib64/libshim_megvii.so|586af7a78415d19cdd2d6ba18fc1f4b5ab74b620
 
 # Camera (arcsoft)
 vendor/lib64/libarcsoft_beautyshot.so
