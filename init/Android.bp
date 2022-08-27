@@ -49,7 +49,7 @@ prebuilt_etc {
     name: "ueventd.vayu.rc",
     filename: "ueventd.rc",
     src: "ueventd.vayu.rc",
-    vendor: true,
+    device_specific: true,
 }
 
 sh_binary {
