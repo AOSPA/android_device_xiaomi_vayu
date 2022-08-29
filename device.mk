@@ -354,4 +354,8 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.data.iwlan.enable=true \
     ro.telephony.iwlan_operation_mode=legacy
 
+# WFD
+PRODUCT_PACKAGES += \
+    libwfdaac_vendor:32
+
 include vendor/xiaomi/vayu/vayu-vendor.mk
