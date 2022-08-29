@@ -33,18 +33,17 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/audio_policy_configuration.xml
 
 PRODUCT_PRODUCT_PROPERTIES += \
-    aaudio.mmap_policy=1 \
     persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24 \
-    ro.vendor.audio.sdk.fluencetype=fluence \
     vendor.audio.adm.buffering.ms=6 \
-    vendor.audio.hal.output.suspend.supported=false \
     vendor.audio.offload.track.enable=false
 
-PRODUCT_SYSTEM_PROPERTIES += \
+PRODUCT_ODM_PROPERTIES += \
     ro.config.media_vol_default=8 \
     ro.config.media_vol_steps=25 \
     ro.config.vc_call_vol_default=9 \
-    ro.config.vc_call_vol_steps=11
+    ro.config.vc_call_vol_steps=11 \
+    ro.vendor.audio.sdk.fluencetype=fluence \
+    vendor.audio.hal.output.suspend.supported=false
 
 # Bluetooth
 PRODUCT_PACKAGES += \
