@@ -18,6 +18,9 @@
 # Data files
 /data/per_boot(/.*)?                                                 u:object_r:per_boot_file:s0
 
+# discard_max_bytes
+/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/block/sda/queue/discard_max_bytes     u:object_r:vendor_sysfs_scsi_host:s0
+
 # Display
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/disp_param        u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/dynamic_fps       u:object_r:vendor_sysfs_graphics:s0
