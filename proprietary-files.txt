@@ -68,6 +68,9 @@ system_ext/etc/permissions/audiosphere.xml|015ad7be4921039238bfa3d34d052d752453e
 system_ext/framework/audiosphere.jar|9c28317f12b93a6d881c80a991ff24716fce4a12
 vendor/lib/soundfx/libasphere.so|b2daeb875914a33575c7d7a67429f25d09d35489
 vendor/lib/soundfx/libshoebox.so|214d5fefd21c617bdfa05255fe667127b4242556
+vendor/lib/soundfx/libqcbassboost.so|cdad1495b301ec2f22edd7557ec14c9d8370a81c
+vendor/lib/soundfx/libqcreverb.so|c271099a9268c959e8f1ae50480dc46a97c72470
+vendor/lib/soundfx/libqcvirt.so|346cbac883120747d5ceb0ac2b6fd3314a03147c
 
 # Audio HAL
 vendor/lib/hw/audio.primary.msmnile.so
