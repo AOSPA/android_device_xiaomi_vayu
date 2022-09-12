@@ -1,4 +1,4 @@
-# These proprietary files are extracted from POCO X3 Pro (codenamed `vayu`) MIUI V12.5.7.0 RJUMIXM, unless pinned
+# These proprietary files are extracted from POCO X3 Pro (codenamed `vayu`) MIUI V13.0.5.0 SJUMIXM, unless pinned
 
 # ADSP - from LA.UM.9.1.r1-11500.02-SMxxx0.QSSI12.0
 vendor/bin/adsprpcd|12e09d8e87b260a8721c7938890186a0877a9e85
@@ -75,6 +75,7 @@ vendor/lib/vndk/libxlog.so
 vendor/lib/libaudio_log_utils.so
 vendor/lib/libaudioparsers.so
 vendor/lib/libaudioroute_ext.so
+vendor/lib/libresampler.so
 vendor/lib/vendor.qti.hardware.audiohalext@1.0.so
 
 # Audio libraries
@@ -156,6 +157,7 @@ vendor/lib64/libcamera_scene.so
 vendor/lib64/libcapiv2svacnn.so
 vendor/lib64/libcapiv2vop.so
 vendor/lib64/libcom.qti.chinodeutils.so
+vendor/lib64/libcvface_api.so
 vendor/lib64/libdualcam_optical_zoom_control.so
 vendor/lib64/libdualcam_video_optical_zoom.so
 vendor/lib64/libft2vendor.so
@@ -327,10 +329,10 @@ vendor/etc/camera/visidon_clearshot_params_algoup.xml
 # Camera configs - from POCO X3 Pro MIUI V12.0.6.0 RJUMIXM
 vendor/etc/camera/sr_params.xml|f83901324b80bc1e1af2751e1bb4d95b01977f6e
 
-# Camera-Megvii
-vendor/etc/camera/megviifacepp_0_5_2_model
-vendor/lib64/libmegface.so
-vendor/lib64/libMegviiFacepp-0.5.2.so
+# Camera-Megvii - from POCO X3 Pro MIUI V12.5.7.0 RJUMIXM
+vendor/etc/camera/megviifacepp_0_5_2_model|1f0cdc706d3853114ecf7a2c0c7436238fcdf258
+vendor/lib64/libmegface.so|e32055dc224076c8a7e8486292341c4604a12787
+vendor/lib64/libMegviiFacepp-0.5.2.so|4dce8e04d919df9434d2444c7687328018a6e34f
 
 # Camera-firmware
 vendor/firmware/CAMERA_ICP.elf
@@ -469,7 +471,7 @@ vendor/lib64/hw/fingerprint.goodix.so:vendor/lib64/hw/fingerprint.goodix.default
 vendor/lib64/libgf_ca.so
 vendor/lib64/libgf_hal.so
 vendor/lib64/libgoodixhwfingerprint.so
-vendor/lib64/vendor.goodix.hardware.cap.biometrics.fingerprint@2.1.so
+vendor/lib64/vendor.xiaomi.hardware.fx.tunnel@1.0.so
 
 # FM - from LA.UM.9.1.r1-11500.02-SMxxx0.QSSI12.0
 system_ext/lib64/fm_helium.so|0d810fb4f094daf6f399a3d13f379a13114b21a6
@@ -816,15 +818,6 @@ vendor/etc/sensors/config/sns_tilt_sw_enabled.json
 vendor/etc/sensors/config/sns_tilt_to_wake.json
 vendor/etc/sensors/hals.conf
 vendor/etc/sensors/sns_reg_config
-
-# Soter
--app/SoterService/SoterService.apk
-
-# Soter - from LA.UM.9.1.r1-11500.02-SMxxx0.QSSI12.0
-vendor/bin/hw/vendor.qti.hardware.soter@1.0-service|8e315a85eeeb94a51f1533c80212d2fc0ec88760
-vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc|76447a61ad5529949365eeb7e8ca000e48bd28ae
-vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so|c20b05b20874e6b7f14cd61346646c79c363f42f
-vendor/lib64/vendor.qti.hardware.soter@1.0.so|52f410430054a012a983529b0ee1ed3b689b9dcb
 
 # Thermal
 vendor/bin/mi_thermald
