@@ -147,6 +147,8 @@ on charger
     start vendor.power_off_alarm
     setprop sys.usb.controller a600000.dwc3
     setprop sys.usb.configfs 1
+    
+    start vendor.hvdcp_opti
 
 service vendor.thermal-engine /vendor/bin/thermal-engine
    class main
@@ -196,3 +198,10 @@ service dcvs-sh /vendor/bin/init.qti.dcvs.sh
 
 on property:vendor.dcvs.prop=1
    start dcvs-sh
+
+service vendor.hvdcp_opti /vendor/bin/hvdcp_opti
+    class main
+    user root
+    group system wakelock
+    capabilities BLOCK_SUSPEND WAKE_ALARM
+    task_profiles ServiceCapacityLow
