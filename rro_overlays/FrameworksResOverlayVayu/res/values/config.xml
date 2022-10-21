@@ -609,5 +609,8 @@
         <item>910</item>
         <item>150</item>
     </array>
+     
+     <!-- Fingerprint from stock ROM -->
+    <string name="config_stockFingerprint" translatable="false">POCO/vayu_global/vayu:12/RKQ1.200826.002/V13.0.5.0.SJUMIXM:user/release-keys</string>
 
 </resources>
