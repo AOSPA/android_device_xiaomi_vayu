@@ -27,10 +27,6 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <cstdlib>
-#include <fstream>
-#include <string.h>
-#include <unistd.h>
 #include <vector>
 
 #include <android-base/properties.h>
@@ -38,22 +34,10 @@
 #include <sys/_system_properties.h>
 #include <sys/sysinfo.h>
 
-#include "property_service.h"
-#include "vendor_init.h"
-
 using android::base::GetProperty;
-using std::string;
 
-std::vector<std::string> ro_props_default_source_order = {
-    "",
-    "odm.",
-    "product.",
-    "system.",
-    "system_ext.",
-    "vendor.",
-};
-
-void property_override(char const prop[], char const value[], bool add = true) {
+void property_override(char const prop[], char const value[], bool add = true)
+{
     prop_info *pi;
 
     pi = (prop_info *)__system_property_find(prop);
@@ -63,17 +47,21 @@ void property_override(char const prop[], char const value[], bool add = true) {
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
-void load_dalvik_properties() {
+void load_dalvik_properties()
+{
     struct sysinfo sys;
 
     sysinfo(&sys);
-    if (sys.totalram < 6144ull * 1024 * 1024) {
+    if (sys.totalram < 6144ull * 1024 * 1024)
+    {
         // from - phone-xhdpi-6144-dalvik-heap.mk
         property_override("dalvik.vm.heapstartsize", "16m");
         property_override("dalvik.vm.heapgrowthlimit", "256m");
         property_override("dalvik.vm.heapsize", "512m");
         property_override("dalvik.vm.heapmaxfree", "32m");
-    } else {
+    }
+    else
+    {
         // 8GB & 12GB RAM
         property_override("dalvik.vm.heapstartsize", "32m");
         property_override("dalvik.vm.heapgrowthlimit", "512m");
@@ -85,38 +73,31 @@ void load_dalvik_properties() {
     property_override("dalvik.vm.heapminfree", "8m");
 }
 
-void set_device_props(const std::string brand, const std::string device, const std::string model,
-        const std::string name, const std::string marketname) {
-    const auto set_ro_product_prop = [](const std::string &source,
-                                        const std::string &prop,
-                                        const std::string &value) {
-        auto prop_name = "ro.product." + source + prop;
-        property_override(prop_name.c_str(), value.c_str(), true);
-    };
-
-    for (const auto &source : ro_props_default_source_order) {
-        set_ro_product_prop(source, "brand", brand);
-        set_ro_product_prop(source, "device", device);
-        set_ro_product_prop(source, "model", model);
-        set_ro_product_prop(source, "name", name);
-        set_ro_product_prop(source, "marketname", marketname);
-    }
+void load_bhima()
+{
+    property_override("ro.product.brand", "POCO");
+    property_override("ro.product.device", "bhima");
+    property_override("ro.product.manufacturer", "Xiaomi");
+    property_override("ro.product.model", "M2102J20SI");
+    property_override("ro.product.name", "bhima_in");
 }
 
-void vendor_load_properties() {
-    string region = android::base::GetProperty("ro.boot.hwc", "");
+void load_vayu()
+{
+    property_override("ro.product.brand", "POCO");
+    property_override("ro.product.device", "vayu");
+    property_override("ro.product.manufacturer", "Xiaomi");
+    property_override("ro.product.model", "M2102J20SG");
+    property_override("ro.product.name", "vayu");
+}
 
-    if (region == "INDIA") {
-        set_device_props(
-            "POCO", "bhima", "M2102J20SI", "bhima_global", "POCO X3 Pro");
-        property_override("ro.product.mod_device", "bhima_global");
-    } else {
-        set_device_props(
-            "POCO", "vayu", "M2102J20SI", "vayu_global", "POCO X3 Pro");
-        property_override("ro.product.mod_device", "vayu_global");
-    }
+void vendor_load_properties()
+{
+    std::string region = GetProperty("ro.boot.hwc", "");
+    if (region.find("INDIA") != std::string::npos)
+        load_bhima();
+    else
+        load_vayu();
 
     load_dalvik_properties();
-
 }
-
