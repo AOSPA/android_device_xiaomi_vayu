@@ -64,8 +64,6 @@ vendor/etc/acdbdata/adsp_avs_config.acdb
 vendor/firmware/tas256x_reg.bin
 
 # Audio FX modules - from LA.UM.9.1.r1-11500.02-SMxxx0.QSSI12.0
-system_ext/etc/permissions/audiosphere.xml|015ad7be4921039238bfa3d34d052d752453e49c
-system_ext/framework/audiosphere.jar|9c28317f12b93a6d881c80a991ff24716fce4a12
 vendor/lib/soundfx/libasphere.so|b2daeb875914a33575c7d7a67429f25d09d35489
 vendor/lib/soundfx/libshoebox.so|214d5fefd21c617bdfa05255fe667127b4242556
 vendor/lib/soundfx/libqcbassboost.so|cdad1495b301ec2f22edd7557ec14c9d8370a81c
