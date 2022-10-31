@@ -38,9 +38,40 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/sound_trigger_mixer_paths_wcd9340_qrd.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths_wcd9340_qrd.xml \
     $(LOCAL_PATH)/configs/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_platform_info.xml
 
-# Audio fluence property
+# Audio Properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    audio.offload.min.duration.secs=30 \
+    audio.offload.video=true \
+    persist.vendor.audio.hifi=false \
+    persist.vendor.audio.ring.filter.mask=0 \
+    ro.vendor.audio.soundfx.usb=true \
+    ro.af.client_heap_size_kbyte=7168 \
+    ro.config.vc_call_vol_steps=11 \
+    vendor.audio.usb.disable.sidetone=true
+
 PRODUCT_PRODUCT_PROPERTY += \
     ro.vendor.audio.sdk.fluencetype=fluence
+
+# Bluetooth Properties
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptive \
+    persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true \
+    persist.vendor.qcom.bluetooth.enable.splita2dp=true \
+    persist.vendor.qcom.bluetooth.scram.enabled=true \
+    persist.vendor.qcom.bluetooth.soc=cherokee \
+    persist.vendor.qcom.bluetooth.twsp_state.enabled=false \
+    ro.vendor.bluetooth.wipower=false \
+    vendor.qcom.bluetooth.soc=cherokee
+
+PRODUCT_SYSTEM_PROPERTIES += \
+    persist.vendor.bt.a2dp.aac_whitelist=false \
+    persist.vendor.bt.a2dp.mac_whitelist=false \
+    persist.vendor.btstack.enable.twsplus=true \
+    persist.vendor.btstack.enable.twsplussho=true \
+    persist.vendor.btsatck.absvolfeature=true \
+    persist.vendor.qcom.bluetooth.aac_vbr_ctl.enabled=false \
+    ro.bluetooth.library_name=libbluetooth_qti.so \
+    vendor.bluetooth.soc=cherokee
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -58,6 +89,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml
 
+# Camera Properties
+PRODUCT_SYSTEM_PROPERTIES += \
+    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.snap
+
 # Configstore
 PRODUCT_PACKAGES += \
     disable_configstore
@@ -70,10 +105,52 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
 
+# Charger Properties
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.charger.enable_suspend=true
+
+# Data Module Properties
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.vendor.use_data_netmgrd=true \
+    persist.vendor.data.mode=concurrent
+
+# DPM Properties
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.dpm.nsrm.bkg.evt=3955 \
+    persist.vendor.dpm.loglevel=0 \
+    persist.vendor.dpmhalservice.enable=1
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4-service.clearkey \
     android.hardware.drm@1.3.vendor
+
+# Display Properties
+PRODUCT_VENDOR_PROPERTIES += \
+    debug.sf.disable_backpressure=1 \
+    debug.sf.use_phase_offsets_as_durations=1 \
+    debug.sf.late.sf.duration=10500000 \
+    debug.sf.late.app.duration=20500000 \
+    debug.sf.early.sf.duration=21000000 \
+    debug.sf.early.app.duration=16500000 \
+    debug.sf.earlyGl.sf.duration=13500000 \
+    debug.sf.earlyGl.app.duration=21000000 \
+    debug.sf.enable_egl_image_tracker=1 \
+    debug.sf.enable_hwc_vds=1 \
+    debug.sf.latch_unsignaled=1 \
+    vendor.display.idle_time=0 \
+    vendor.display.idle_time_inactive=0 \
+    vendor.display.qdcm.mode_combine=1
+
+# Display - Set color mode to Adaptive by default
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.sys.sf.color_saturation=1.0 \
+    persist.sys.sf.native_mode=2 \
+    persist.sys.sf.color_mode=9
+
+# Factory Reset Protection
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
 # Fastbootd
 PRODUCT_PACKAGES += \
@@ -96,6 +173,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0.vendor
 
+# Gatekeeper Properties
+PRODUCT_VENDOR_PROPERTIES += \
+    vendor.gatekeeper.disable_spu = true
+
 # GPS Configs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/apdr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/apdr.conf \
@@ -110,6 +191,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.health@2.1-service
+
+# HVDCP
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.cp.taper_term_mv=7000 \
+    persist.vendor.cp.fcc_main_ua=400000 \
+    persist.vendor.cp.qc3p5_vfloat_offset_uv=110000
 
 # Init
 PRODUCT_PACKAGES += \
@@ -149,6 +236,10 @@ PRODUCT_PACKAGES += \
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light-service.xiaomi
+
+# Netflix custom property
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.netflix.bsp_rev=Q855-16947-1
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -194,6 +285,30 @@ TARGET_COMMON_QTI_COMPONENTS := \
     vibrator \
     wfd \
     wlan
+
+# Radio Properties
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.radio.data_ltd_sys_ind=1 \
+    persist.vendor.radio.dynamic_sar=1 \
+    persist.vendor.radio.force_ltd_sys_ind=1 \
+    persist.vendor.radio.force_on_dc=true \
+    persist.vendor.radio.manual_nw_rej_ct=1 \
+    persist.vendor.radio.redir_party_num=1 \
+    persist.vendor.radio.report_codec=1
+
+PRODUCT_SYSTEM_PROPERTIES += \
+    persist.radio.dynamic_sar=false \
+    persist.radio.NO_STAPA=1 \
+    persist.radio.VT_HYBRID_ENABLE=1 \
+    ro.telephony.default_cdma_sub=0 \
+    ro.telephony.default_network=22,22
+
+# Refresh Rate Properties
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.surface_flinger.use_content_detection_for_refresh_rate=true \
+    ro.surface_flinger.set_display_power_timer_ms=1000 \
+    ro.surface_flinger.set_idle_timer_ms=500 \
+    ro.surface_flinger.set_touch_timer_ms=750
 
 # Sensors
 PRODUCT_PACKAGES += \
