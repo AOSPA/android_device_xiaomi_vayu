@@ -174,15 +174,21 @@ PRODUCT_PACKAGES += \
 
 # Init scripts
 PRODUCT_PACKAGES += \
-    fstab.qcom \
     init.mi.usb.sh \
-    init.qti.dcvs.sh \
+    init.qcom.post_boot.sh \
+    init.qcom.sensors.sh \
+    init.qcom.sh \
+    init.qti.dcvs.sh
+
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+    init.qcom.rc \
+    init.recovery.qcom.rc \
     init.target.rc \
-    init.vayu.rc \
-    ueventd.vayu.rc
+    ueventd.qcom.rc
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.default
+    $(LOCAL_PATH)/init/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.default
 
 # Input
 PRODUCT_COPY_FILES += \
@@ -285,7 +291,6 @@ TARGET_COMMON_QTI_COMPONENTS := \
     bt \
     gps \
     display \
-    init \
     media-legacy \
     overlay \
     perf \

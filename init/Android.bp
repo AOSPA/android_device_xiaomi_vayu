@@ -27,39 +27,70 @@ cc_library_static {
 
 prebuilt_etc {
     name: "fstab.qcom",
-    src: "fstab.qcom",
+    src: "etc/fstab.qcom",
     vendor: true,
 }
 
 prebuilt_etc {
-    name: "init.target.rc",
-    src: "init.target.rc",
+    name: "init.qcom.rc",
+    src: "etc/init.qcom.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
 
 prebuilt_etc {
-    name: "init.vayu.rc",
-    src: "init.vayu.rc",
-    sub_dir: "init",
+    name: "init.recovery.qcom.rc",
+    src: "etc/init.recovery.qcom.rc",
+    sub_dir: "init/hw",
+    recovery: true,
+}
+
+prebuilt_etc {
+    name: "init.target.rc",
+    src: "etc/init.target.rc",
+    sub_dir: "init/hw",
     vendor: true,
 }
 
 prebuilt_etc {
-    name: "ueventd.vayu.rc",
+    name: "ueventd.qcom.rc",
     filename: "ueventd.rc",
-    src: "ueventd.vayu.rc",
-    device_specific: true,
+    src: "etc/ueventd.qcom.rc",
+    vendor: true,
 }
 
 sh_binary {
     name: "init.mi.usb.sh",
-    src: "init.mi.usb.sh",
+    src: "bin/init.mi.usb.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.post_boot.sh",
+    src: "bin/init.qcom.post_boot.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.sensors.sh",
+    src: "bin/init.qcom.sensors.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qcom.sh",
+    src: "bin/init.qcom.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "init.qti.dcvs.sh",
-    src: "init.qti.dcvs.sh",
+    src: "bin/init.qti.dcvs.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.recovery.qcom.sh",
+    src: "bin/init.recovery.qcom.sh",
     vendor: true,
 }
