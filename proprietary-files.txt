@@ -1,4 +1,4 @@
-# All the proprietary files are extracted from miui_VAYUGlobal_V13.0.4.0.SJUMIXM_f96a3e38af_12.0.zip, unless pinned.
+# All the proprietary files are extracted from miui_VAYUGlobal_V13.0.5.0.SJUMIXM_7cc0b9ac86_12.0.zip, unless pinned.
 
 # ACDB
 vendor/etc/acdbdata/Forte/Forte_Bluetooth_cal.acdb
@@ -501,19 +501,11 @@ vendor/lib64/libgoodixhwfingerprint.so
 vendor/lib64/vendor.xiaomi.hardware.fx.tunnel@1.0.so
 
 # FM
-system_ext/lib/fm_helium.so
-system_ext/lib/libfm-hci.so
-system_ext/lib/vendor.qti.hardware.fm@1.0.so
-system_ext/lib64/fm_helium.so
-system_ext/lib64/libfm-hci.so
-system_ext/lib64/vendor.qti.hardware.fm@1.0.so
 vendor/etc/init/init.qti.fm.rc
 vendor/etc/init.qti.fm.sh
 vendor/bin/fm_qsoc_patches
 vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so
-vendor/lib/vendor.qti.hardware.fm@1.0.so
 vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.fm@1.0.so
 
 # Gatekeeper
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
@@ -723,7 +715,6 @@ vendor/lib/libAlacSwDec.so
 vendor/lib/libApeSwDec.so
 vendor/lib/libdsd2pcm.so
 vendor/lib/libFlacSwDec.so
-vendor/lib/libMpeg4SwEncoder.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxAlacDec.so
 vendor/lib/libOmxAlacDecSw.so
@@ -744,7 +735,6 @@ vendor/lib/libswvdec.so
 vendor/lib64/libAlacSwDec.so
 vendor/lib64/libApeSwDec.so
 vendor/lib64/libFlacSwDec.so
-vendor/lib64/libMpeg4SwEncoder.so
 vendor/lib64/libOmxAacDec.so
 vendor/lib64/libOmxAlacDec.so
 vendor/lib64/libOmxAlacDecSw.so
@@ -868,7 +858,6 @@ vendor/lib64/libnetmgr_common.so
 vendor/lib64/libnetmgr_nr_fusion.so
 vendor/lib64/libnetmgr_rmnet_ext.so
 vendor/lib64/libnlnetmgr.so
-vendor/lib64/liboemaids_vendor.so
 vendor/lib64/libpdmapper.so
 vendor/lib64/libpdnotifier.so
 vendor/lib64/libqcbor.so
@@ -1175,7 +1164,6 @@ vendor/lib/libmm-hdcpmgr.so
 vendor/lib/libmmosal.so
 vendor/lib/libmmrtpdecoder_proprietary.so
 vendor/lib/libmmrtpencoder_proprietary.so
-vendor/lib/libwfdaac_vendor.so
 vendor/lib/libwfdcodecv4l2_proprietary.so
 vendor/lib/libwfdcommonutils_proprietary.so
 vendor/lib/libwfdconfigutils_proprietary.so
