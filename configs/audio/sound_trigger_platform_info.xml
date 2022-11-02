@@ -27,12 +27,12 @@
 <!--- IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                             -->
 <sound_trigger_platform_info>
     <param version="0x0103" /> <!-- this must be the first param -->
-<!--- Version History:                                                          -->
-<!--- 0x0101: Legacy version.                                                   -->
-<!--- 0x0102: Includes acdb_ids param with the gcs_usecase tag. This matches    -->
-<!--- the gcs_usecase with the acdb device that uses it.                        -->
-<!--- 0x0103: app_type and in_channels added to <lsm usecase> and out_channels  -->
-<!--- added to <adm_config>                                                     -->
+    <!--- Version History:                                                          -->
+    <!--- 0x0101: Legacy version.                                                   -->
+    <!--- 0x0102: Includes acdb_ids param with the gcs_usecase tag. This matches    -->
+    <!--- the gcs_usecase with the acdb device that uses it.                        -->
+    <!--- 0x0103: app_type and in_channels added to <lsm usecase> and out_channels  -->
+    <!--- added to <adm_config>                                                     -->
 
     <common_config>
         <param implementer_version="0x0100" />
@@ -82,7 +82,7 @@
         <!-- Profile specific data which the algorithm can support -->
         <param sample_rate="16000" />
         <param bit_width="16" />
-        <param out_channels="1"/> <!-- Module output channels -->
+        <param out_channels="1" /> <!-- Module output channels -->
 
         <!-- adm_cfg_profile should match with the one defined under adm_config -->
         <!-- Set it to NONE if LSM directly connects to AFE -->
@@ -96,20 +96,20 @@
         <param wdsp_fluence_type="NONE" />
         <arm_ss_usecase>
             <!-- Options are "KEYWORD_DETECTION", "USER_VERIFICATION", "CUSTOM_DETECTION"  -->
-            <param sm_detection_type= "KEYWORD_DETECTION" />
+            <param sm_detection_type="KEYWORD_DETECTION" />
             <param sm_id="0x2" />
-            <param module_lib="libcapiv2svacnn.so"/>
-            <param sample_rate="16000"/>
-            <param bit_wdith="16"/>
-            <param channel_count="1"/>
+            <param module_lib="libcapiv2svacnn.so" />
+            <param sample_rate="16000" />
+            <param bit_wdith="16" />
+            <param channel_count="1" />
         </arm_ss_usecase>
         <arm_ss_usecase>
-            <param sm_detection_type= "USER_VERIFICATION" />
+            <param sm_detection_type="USER_VERIFICATION" />
             <param sm_id="0x4" />
-            <param module_lib="libcapiv2vop.so"/>
-            <param sample_rate="16000"/>
-            <param bit_wdith="16"/>
-            <param channel_count="1"/>
+            <param module_lib="libcapiv2vop.so" />
+            <param sample_rate="16000" />
+            <param bit_wdith="16" />
+            <param channel_count="1" />
         </arm_ss_usecase>
         <gcs_usecase>
             <param uid="0x1" />
@@ -163,7 +163,7 @@
         <lsm_usecase>
             <param execution_mode="ADSP" />
             <param app_type="2" /> <!-- app type used in ACDB -->
-            <param in_channels="1"/> <!-- Module input channels -->
+            <param in_channels="1" /> <!-- Module input channels -->
             <param load_sound_model_ids="0x00012C1C, 0x00012C14" />
             <param unload_sound_model_ids="0x00012C1C, 0x00012C15" />
             <param confidence_levels_ids="0x00012C1C, 0x00012C07" />
@@ -193,7 +193,7 @@
         <!-- Profile specific data which the algorithm can support -->
         <param sample_rate="16000" />
         <param bit_width="16" />
-        <param out_channels="1"/> <!-- Module output channels -->
+        <param out_channels="1" /> <!-- Module output channels -->
         <!-- adm_cfg_profile should match with the one defined under adm_config -->
         <!-- Set it to NONE if LSM directly connects to AFE -->
         <param adm_cfg_profile="NONE" />
@@ -223,7 +223,7 @@
         <lsm_usecase>
             <param execution_mode="ADSP" />
             <param app_type="4" /> <!-- app type for MD used in ACDB -->
-            <param in_channels="1"/> <!-- Module input channels -->
+            <param in_channels="1" /> <!-- Module input channels -->
             <param load_sound_model_ids="0x00012C22, 0x00012C14" />
             <param unload_sound_model_ids="0x00012C22, 0x00012C15" />
             <param confidence_levels_ids="0x00012C22, 0x00012C07" />
@@ -251,7 +251,7 @@
         <!-- Profile specific data which the algorithm can support -->
         <param sample_rate="16000" />
         <param bit_width="16" />
-        <param out_channels="1"/> <!-- Module output channels -->
+        <param out_channels="1" /> <!-- Module output channels -->
         <!-- adm_cfg_profile should match with the one defined under adm_config -->
         <!-- Set it to NONE if LSM directly connects to AFE -->
         <param adm_cfg_profile="FFECNS" />
@@ -287,7 +287,7 @@
         <lsm_usecase>
             <param execution_mode="ADSP" />
             <param app_type="3" /> <!-- app type used in ACDB -->
-            <param in_channels="1"/> <!-- Module input channels -->
+            <param in_channels="1" /> <!-- Module input channels -->
             <param load_sound_model_ids="0x18000001, 0x00012C14" />
             <param unload_sound_model_ids="0x18000001, 0x00012C15" />
             <param confidence_levels_ids="0x18000001, 0x00012C07" />
@@ -356,7 +356,7 @@
         <param app_type="69947" />
         <param sample_rate="16000" />
         <param bit_width="16" />
-        <param out_channels="1"/>
+        <param out_channels="1" />
     </adm_config>
 
     <!-- backend_type tag defines backend type for each device -->

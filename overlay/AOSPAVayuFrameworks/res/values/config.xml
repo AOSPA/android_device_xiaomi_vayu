@@ -16,10 +16,10 @@
 -->
 <resources>
 
-    <!-- Gestures' key codes. If the gesture is not supported set it to 0. -->
-    <integer name="config_doubleTapKeyCode">143</integer>
+     <!-- Gestures' key codes. If the gesture is not supported set it to 0. -->
+     <integer name="config_doubleTapKeyCode">143</integer>
 
-    <!-- Default settings for gestures:
+     <!-- Default settings for gestures:
              0 - Disabled
              1 - Wake
              2 - Pulse
@@ -30,9 +30,9 @@
              7 - Previous
              8 - Camera
              9 - Dialer -->
-    <integer name="config_doubleTapDefault">1</integer>
+     <integer name="config_doubleTapDefault">1</integer>
 
-    <!-- Whether to intercept inputs on screen off. -->
-    <bool name="config_enableKeyHandler">true</bool>
+     <!-- Whether to intercept inputs on screen off. -->
+     <bool name="config_enableKeyHandler">true</bool>
 
 </resources>

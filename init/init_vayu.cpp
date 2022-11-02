@@ -42,9 +42,8 @@
 using android::base::GetProperty;
 using std::string;
 
-void property_override(char const prop[], char const value[])
-{
-    auto pi = (prop_info*) __system_property_find(prop);
+void property_override(char const prop[], char const value[]) {
+    auto pi = (prop_info *)__system_property_find(prop);
 
     if (pi != nullptr)
         __system_property_update(pi, value, strlen(value));
@@ -65,10 +64,10 @@ void set_ro_build_prop(const string &source, const string &prop,
 }
 
 void set_device_props(const string brand, const string device,
-			const string model, const string name) {
+                      const string model, const string name) {
     // list of partitions to override props
-    string source_partitions[] = { "", "bootimage.", "odm.", "product.",
-                                   "system.", "system_ext.", "vendor." };
+    string source_partitions[] = {"", "bootimage.", "odm.", "product.",
+                                  "system.", "system_ext.", "vendor."};
 
     for (const string &source : source_partitions) {
         set_ro_build_prop(source, "brand", brand, true);
@@ -79,8 +78,7 @@ void set_device_props(const string brand, const string device,
     }
 }
 
-void vendor_load_properties()
-{
+void vendor_load_properties() {
     /*
      * Detect device and configure properties
      */
