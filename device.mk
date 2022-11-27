@@ -72,7 +72,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.qcom.bluetooth.scram.enabled=true \
     persist.vendor.qcom.bluetooth.soc=cherokee \
     persist.vendor.qcom.bluetooth.twsp_state.enabled=false \
-    persist.vendor.service.bdroid.sibs=false
     ro.vendor.bluetooth.wipower=false \
     vendor.qcom.bluetooth.soc=cherokee
 
