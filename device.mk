@@ -269,22 +269,7 @@ TARGET_BOARD_PLATFORM := msmnile
 
 # QTI components
 TARGET_COMMON_QTI_COMPONENTS := \
-    adreno \
-    audio \
-    av \
-    bt \
-    display \
-    gps \
-    init \
-    media-legacy \
-    nq-nfc \
-    overlay \
-    perf \
-    telephony \
-    usb \
-    vibrator \
-    wfd \
-    wlan
+    all
 
 # Radio Properties
 PRODUCT_VENDOR_PROPERTIES += \
