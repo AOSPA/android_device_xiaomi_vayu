@@ -129,6 +129,9 @@ on property:sys.boot_completed=1
     write /dev/cpuset/background/cpus 0-7
     write /dev/cpuset/system-background/cpus 0-7
 
+    # Start custom post_boot script
+    start vayu-post-boot
+
 service vendor.pd_mapper /vendor/bin/pd-mapper
     class core
     user system
@@ -213,3 +216,10 @@ service vendor.remosaic_daemon /system/vendor/bin/remosaic_daemon
     user camera
     group camera
     writepid /dev/cpuset/system-background/tasks
+
+service vayu-post-boot /vendor/bin/sh /vendor/bin/init.vayu.post_boot.sh
+    class core
+    user root
+    group root system wakelock graphics
+    disabled
+    oneshot

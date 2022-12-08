@@ -201,10 +201,15 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Init
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.target.rc
+    init.target.rc \
+    init.vayu.post_boot.sh
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
+
+# Init Properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.post_boot.custom=true
 
 # HIDL
 PRODUCT_PACKAGES += \

@@ -38,3 +38,9 @@ prebuilt_etc {
     sub_dir: "init/hw",
     vendor: true,
 }
+
+sh_binary {
+    name: "init.vayu.post_boot.sh",
+    src: "init.vayu.post_boot.sh",
+    vendor: true,
+}
