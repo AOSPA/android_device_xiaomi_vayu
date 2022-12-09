@@ -132,6 +132,9 @@ on property:sys.boot_completed=1
     # Start custom post_boot script
     start vayu-post-boot
 
+    # Enable ZRAM on boot_complete
+    swapon_all /vendor/etc/fstab.qcom
+
 service vendor.pd_mapper /vendor/bin/pd-mapper
     class core
     user system
