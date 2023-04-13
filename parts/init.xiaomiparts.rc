@@ -13,7 +13,7 @@
 # limitations under the License.
 
 on property:persist.lcd.hbm_mode=*
-    write /sys/devices/platform/soc/soc:qcom,dsi-display/hbm ${persist.lcd.hbm_mode}
+    write /sys/devices/platform/soc/soc:qcom,dsi-display-primary/hbm ${persist.lcd.hbm_mode}
 
 on property:persist.lcd.cabc_mode=*
-    write /sys/devices/platform/soc/soc:qcom,dsi-display/cabc ${persist.lcd.cabc_mode}
+    write /sys/devices/platform/soc/soc:qcom,dsi-display-primary/cabc ${persist.lcd.cabc_mode}
