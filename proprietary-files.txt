@@ -418,24 +418,9 @@ vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|d9f1aa7f93b928f42499d613d20ccbc60f2
 vendor/lib64/libdpmqmihal.so|41eb89e66ba065c43a5eb79cd3c72cef0ee167aa
 
 # DRM - from LA.UM.9.1.r1-11500.02-SMxxx0.QSSI12.0
-vendor/bin/qseecomd|8d8171bf2fa5bec32b3fe12eddb99b63ef252e3b
 vendor/etc/gpfspath_oem_config.xml|7aeade35b0bbe27530f6aca8c1ed5192a7acf59d
-vendor/etc/init/qseecomd.rc|0ebfb7c5d1d2459be4fdac951a182dc486f3bda7
-vendor/lib64/libcpion.so|542fd1114d09ec5c0d6d8e44ed925a0ee226ce94
-vendor/lib64/libdrmfs.so|2e000862d1dba971796ba1223352af519ab86229
-vendor/lib64/libdrmtime.so|d7460a3d0d0a9ccc044688f960ca4b9c3c05cfd5
-vendor/lib64/libGPreqcancel.so|b9efbc8623981e1249ad0a0f8964b2b655d2b334
-vendor/lib64/libGPreqcancel_svc.so|e2465e7169cc6ab771fcb54d0412ffe8c15b0100
 vendor/lib64/libhdcpsrm.so|0e5aa52dabdb35ffd344d8c0a8a287b10526165f
-vendor/lib64/libminkdescriptor.so|3fb52e7d3c9c213df62881a7068baab82cbbd78e
-vendor/lib64/libminksocket.so|8be2d23ce69429813daedfbe5113345cda5da973
 vendor/lib64/liboemcrypto.so|54fb39e4df2e1c0864d9ccd9853468c3366efeca
-vendor/lib64/libops.so|a43ae29ba4728fc19384dd11065ec401c681bd56
-vendor/lib64/libqisl.so|c79719eebc094c2af9561e8df2c158638b111b70
-vendor/lib64/libQSEEComAPI.so|169800920675a6936b24c89a50b031861e2c8017
-vendor/lib64/librpmb.so|9fbef43f3e4a8b5b69b8f19d0b4b21162d108b75
-vendor/lib64/libssd.so|4a30f8df82c6fc816391e6a2858000e220c1e8cb
-vendor/lib64/libtrustedapploader.so|e9ebd0130381cf60219d4c511a8e6908684cb7ab
 
 # DRM widevine
 vendor/bin/hw/android.hardware.drm@1.3-service.widevine
@@ -626,7 +611,6 @@ vendor/lib64/libperipheral_client.so|9bfd41e276e16b8f7c6808f3d87531fc5be4cdd5
 vendor/bin/irsc_util|de2df4863eda54a6f784910752022f5836f01c18
 vendor/bin/pd-mapper|60bb4f1c363c848c0e0675fbd0364837c379a0d8
 vendor/bin/qrtr-ns|3e7e8927f171d3a4bab54602521e3bc22d80699c
-vendor/lib64/libdiag.so|9ad31537f4e036c66d56583163785dfaf51a752d
 vendor/lib64/libdsutils.so|52b36dfb41130cb8090a27b8757518b255e9797c
 vendor/lib64/libidl.so|112762408586f0643a49c23b05247b4d6e0b96b0
 vendor/lib64/libmdmdetect.so|de2a1c7a920b212379a5e0104c4e79fc761b71ce
@@ -641,7 +625,6 @@ vendor/lib64/libqmiservices.so|5a806357bba21014bb4bfe6e0000993563b24e20
 vendor/lib64/libqmi.so|9e1554a74fa8f8abd4d5f7ffac99d0b4129a5bb1
 vendor/lib64/libqrtr.so|56cb57fbf00b3644de26da70aaaa6ed4ae8e4383
 vendor/lib64/libqsocket.so|9275cfbf7025c064fe5086ed76386635314aab4a
-vendor/lib/libdiag.so|fad951d12e838f36c151d1c7792468a5df160c6a
 vendor/lib/libdsutils.so|df5d9006e1dd950ee0cc8182b100c30cb560e0f5
 vendor/lib/libidl.so|87b1e8345db9df024064ccfe51cdfcf0bb038b1b
 vendor/lib/libmdmdetect.so|5c738486714565d4149f04f4a379dc0d4e282017
@@ -803,7 +786,6 @@ vendor/etc/init/init.mi_thermald.rc
 -vendor/app/TimeService/TimeService.apk|1a5f39aa2969feee50ff81ec870b5e2669ae515e
 vendor/bin/time_daemon|17377813bbc330c23d2fee77be21fe24d8aa131e
 vendor/etc/init/init.time_daemon.rc|b253ca2a498757e14e1d7a051bf504ae09218f51
-vendor/lib64/libtime_genoff.so|7b8bf7bf1eaa4df8f6613f4ece711a0797cd2e46
 
 # WiFi Display - from LA.UM.9.1.r1-11500.02-SMxxx0.QSSI12.0
 vendor/bin/wfdvndservice|194bb3aef5237f05d0c8fab2c88846147a6cc55a

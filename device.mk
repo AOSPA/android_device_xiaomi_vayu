@@ -276,7 +276,8 @@ TARGET_BOARD_PLATFORM := msmnile
 TARGET_COMMON_QTI_COMPONENTS := \
     all \
     charging \
-    keymaster
+    keymaster \
+    qseecomd
 
 # Radio Properties
 PRODUCT_VENDOR_PROPERTIES += \
