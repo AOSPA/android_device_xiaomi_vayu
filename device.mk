@@ -274,7 +274,8 @@ TARGET_BOARD_PLATFORM := msmnile
 
 # QTI components
 TARGET_COMMON_QTI_COMPONENTS := \
-    all
+    all \
+    charging
 
 # Radio Properties
 PRODUCT_VENDOR_PROPERTIES += \
