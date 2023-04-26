@@ -443,13 +443,6 @@ vendor/lib64/libgf_hal.so
 vendor/lib64/libgoodixhwfingerprint.so
 vendor/lib64/vendor.xiaomi.hardware.fx.tunnel@1.0.so
 
-# FM - from LA.UM.9.1.r1-12900-SMxxx0.0
-system_ext/lib64/fm_helium.so|e551c92ba49f250d8404c0a7b00eb6f3e0698195
-system_ext/lib64/libfm-hci.so|52b77c5f135d251aedb8cc509ce22bf50d7fcccf
--system_ext/lib64/vendor.qti.hardware.fm@1.0.so|4ba97fa02808eb1d125c9b7ccd9d0a92bb49ab70
-vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so|f2e143c684cd9f31372df63b44c163744b2ca0b7
-vendor/lib64/vendor.qti.hardware.fm@1.0.so|f6e23f902b7e15232b20af55161a24da93ffe25f
-
 # Graphics firmware
 vendor/firmware/a612_rgmu.bin
 vendor/firmware/a618_gmu.bin
