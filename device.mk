@@ -314,10 +314,6 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/xiaomi \
     $(LOCAL_PATH)
 
-# Vnd service manager
-PRODUCT_PACKAGES += \
-    vndservicemanager
-
 # WiFi
 PRODUCT_PACKAGES += \
     libwpa_client
