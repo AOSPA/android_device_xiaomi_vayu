@@ -49,7 +49,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.vc_call_vol_steps=11 \
     vendor.audio.usb.disable.sidetone=true
 
-PRODUCT_PRODUCT_PROPERTY += \
+PRODUCT_ODM_PROPERTIES += \
     ro.vendor.audio.sdk.fluencetype=fluence
 
 # Bluetooth Properties
