@@ -137,7 +137,8 @@ PRODUCT_VENDOR_PROPERTIES += \
     debug.sf.latch_unsignaled=1 \
     vendor.display.idle_time=0 \
     vendor.display.idle_time_inactive=0 \
-    vendor.display.qdcm.mode_combine=1
+    vendor.display.qdcm.mode_combine=1 \
+    vendor.display.use_smooth_motion=1
 
 # Display - Set color mode to Adaptive by default
 PRODUCT_VENDOR_PROPERTIES += \
