@@ -826,3 +826,6 @@ vendor/lib/libwfduibcsrcinterface_proprietary.so|bfd97b6d662657234774a3c9c87f8a0
 vendor/lib/libwfdutils_proprietary.so|788cc674ac7ba6e4c985ec9e8515c143f55e881b
 vendor/lib/vendor.qti.hardware.wifidisplaysession@1.0.so|c08e1803c3089ee5da37b0a56eb9c2bdf9aeb4b2
 vendor/lib/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so|380ad98e1752662d1a2e2f6105fbcc8c28557d2c
+
+# WLAN
+vendor/bin/cnss-daemon
