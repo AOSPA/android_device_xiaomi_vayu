@@ -829,3 +829,6 @@ vendor/lib/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so|380ad98e175266
 
 # WLAN
 vendor/bin/cnss-daemon
+
+# Xiaomi MAC
+vendor/bin/nv_mac
