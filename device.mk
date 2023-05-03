@@ -205,6 +205,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.target.rc \
+    init.vayu.rc \
     init.vayu.post_boot.sh
 
 PRODUCT_COPY_FILES += \
