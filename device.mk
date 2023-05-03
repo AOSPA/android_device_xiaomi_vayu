@@ -74,6 +74,8 @@ PRODUCT_SYSTEM_PROPERTIES += \
     vendor.bluetooth.soc=cherokee
 
 # Camera
+$(call inherit-product-if-exists, vendor/xiaomi/camera/miuicamera.mk)
+
 PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor \
     android.hardware.camera.provider@2.4-impl \
@@ -88,7 +90,11 @@ PRODUCT_COPY_FILES += \
 
 # Camera Properties
 PRODUCT_SYSTEM_PROPERTIES += \
-    vendor.camera.aux.packagelist=com.android.camera
+    ro.miui.notch=1 \
+    ro.product.mod_device=vayu
+
+PRODUCT_VENDOR_PROPERTIES += \
+    camera.disable_zsl_mode=true
 
 # Configstore
 PRODUCT_PACKAGES += \
