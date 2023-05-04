@@ -35,3 +35,25 @@
 
 # Persist subsystem
 /mnt/vendor/persist/subsys(/.*)?                                     u:object_r:persist_subsys_file:s0
+
+# same-process HAL files and their dependencies
+/vendor/lib64/libmialgoengine\.so                                    u:object_r:same_process_hal_file:s0
+/vendor/lib64/libarcsoft_high_dynamic_range_v5\.so                   u:object_r:same_process_hal_file:s0
+/vendor/lib64/libarcsoft_high_dynamic_range\.so                      u:object_r:same_process_hal_file:s0
+/vendor/lib64/libarcsoft_low_light_hdr\.so                           u:object_r:same_process_hal_file:s0
+/vendor/lib64/libmpbase\.so                                          u:object_r:same_process_hal_file:s0
+/vendor/lib64/libarcsoft_beautyshot\.so                              u:object_r:same_process_hal_file:s0
+/vendor/lib64/libarcsoft_dualcam_refocus_image\.so                   u:object_r:same_process_hal_file:s0
+/vendor/lib64/libarcsoft_portrait_lighting\.so                       u:object_r:same_process_hal_file:s0
+/vendor/lib64/libarcsoft_portrait_lighting_c\.so                     u:object_r:same_process_hal_file:s0
+/vendor/lib64/libarcsoft_distortion_correction\.so                   u:object_r:same_process_hal_file:s0
+/vendor/lib64/libarcsoft_bodyslim\.so                                u:object_r:same_process_hal_file:s0
+/vendor/lib64/librelight_only\.so                                    u:object_r:same_process_hal_file:s0
+/vendor/lib64/libalhLDC\.so                                          u:object_r:same_process_hal_file:s0
+/vendor/lib64/libalAILDC\.so                                         u:object_r:same_process_hal_file:s0
+/vendor/lib64/libalCFR\.so                                           u:object_r:same_process_hal_file:s0
+/vendor/lib64/libmialgo_ie_capture\.so                               u:object_r:same_process_hal_file:s0
+/vendor/lib64/libmiai_portraitsupernight\.so                         u:object_r:same_process_hal_file:s0
+/vendor/lib64/libmibokeh_712\.so                                     u:object_r:same_process_hal_file:s0
+/vendor/lib64/libsdk_sr\.so                                          u:object_r:same_process_hal_file:s0
+/vendor/lib64/libmialgo_utils\.so                                    u:object_r:same_process_hal_file:s0
