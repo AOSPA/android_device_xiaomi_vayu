@@ -176,6 +176,7 @@ vendor/lib64/libdualcam_video_optical_zoom.so
 vendor/lib64/libft2vendor.so
 vendor/lib64/libmi_supernight_raw.so
 vendor/lib64/libmi_supernight_raw_checker.so
+vendor/lib64/libmiai_portraitsupernight.so
 vendor/lib64/libmialgo_fs.so
 vendor/lib64/libmialgo_ie_capture.so
 vendor/lib64/libmialgo_image_colourkeeping.so
