@@ -89,8 +89,8 @@ on boot
     start rmt_storage
     start rfs_access
 
-    # Enable suspend to idle mode to reduce latency during suspend/resume
-    write /sys/power/mem_sleep "s2idle"
+    # Enable suspend to RAM to reduce latency during suspend/resume
+    write /sys/power/mem_sleep "deep"
 
 on property:sys.boot_completed=1
     # Runtime fs tuning
