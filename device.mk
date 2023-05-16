@@ -272,6 +272,7 @@ PRODUCT_COPY_FILES += \
 # Overlays
 PRODUCT_PACKAGES += \
     AOSPAVayuFrameworks \
+    VayuCarrierConfigOverlay \
     VayuFrameworks \
     VayuSettings \
     VayuSystemUI

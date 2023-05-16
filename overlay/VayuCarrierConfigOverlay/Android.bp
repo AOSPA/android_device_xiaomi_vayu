@@ -1,0 +1,12 @@
+//
+// Copyright (C) 2023 Paranoid Android
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+runtime_resource_overlay {
+    name: "VayuCarrierConfigOverlay",
+    aaptflags: ["--keep-raw-values"],
+    sdk_version: "current",
+    vendor: true,
+}
