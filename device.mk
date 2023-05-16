@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2022 Paranoid Android
+# Copyright (C) 2023 Paranoid Android
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -261,7 +261,7 @@ PRODUCT_SYSTEM_PROPERTIES += \
 
 # NFC
 PRODUCT_PACKAGES += \
-    SecureElement \
+    SecureElement
 
 TARGET_NFC_SKU := vayu
 
@@ -271,11 +271,11 @@ PRODUCT_COPY_FILES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    AOSPAVayuFrameworks \
+    AOSPAVayuFrameworksOverlay \
     VayuCarrierConfigOverlay \
-    VayuFrameworks \
-    VayuSettings \
-    VayuSystemUI \
+    VayuFrameworksOverlay \
+    VayuSettingsOverlay \
+    VayuSystemUIOverlay \
     VayuWifiOverlay
 
 PRODUCT_ENFORCE_RRO_TARGETS += *

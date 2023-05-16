@@ -5,7 +5,6 @@
 //
 
 runtime_resource_overlay {
-    name: "VayuCarrierConfigOverlay",
-    aaptflags: ["--keep-raw-values"],
+    name: "VayuSystemUIOverlay",
     vendor: true,
 }

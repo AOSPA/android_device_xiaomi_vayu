@@ -6,6 +6,5 @@
 
 runtime_resource_overlay {
     name: "VayuWifiOverlay",
-    sdk_version: "current",
     vendor: true,
 }
