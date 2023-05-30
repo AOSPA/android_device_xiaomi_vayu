@@ -142,6 +142,9 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.3.vendor
 
 # Display Properties
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    ro.sf.use_latest_hwc_vsync_period=0
+
 PRODUCT_VENDOR_PROPERTIES += \
     debug.sf.disable_backpressure=1 \
     debug.sf.use_phase_offsets_as_durations=1 \
